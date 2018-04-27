@@ -1,7 +1,8 @@
-body{
-  background-image: url("../assets/netflix-and-chill-background.png");
-}
+body html{
+    height:100%;
+    width: 100%;
 
+}
 header{
   padding: 0;
   display:flex;
@@ -10,14 +11,14 @@ header{
   background-color: gray;
   text-decoration: none;
   width: 100%;
-  font-family: Garamond;
+  font-family: fantasy;
 
 
 }
 main {
   display: flex;
   justify-content: space-around;
-  margin: 1vw 11vw;
+  margin: 4vw 11vw;
 }
 
 .nav-link{
@@ -28,12 +29,11 @@ main {
   display: flex;
   flex-direction: column;
   width: 33vw;
-  height: 45vw;
 }
 
 .text-message img {
-  height: 40vw;
-  width: 23vw;
+  height: 550px;
+  width: 350px;
 }
 
 .movies{
@@ -64,16 +64,10 @@ form {
 }
 
 .btn-group-dropup{
-  background: white;
   display: flex;
   justify-content: space-between;
-  margin-right: 3vw;
-}
-
-.reviews{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 0 1vw;
+  padding-right: 1vw;
 }
 
 /*

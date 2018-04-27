@@ -11,62 +11,49 @@
 <body>
     <header>
         <h1>WELCOME TO NETFLIX AND CHILL</h1>
-        <!-- nav bar -->
-        <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Start-Over</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-        </li>
-        </ul>
+
+            <div>
+            <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            </ul>
+            </div>
+        </div>
     </header>
     <main>
-    <div class="text-message">
-        <img src="../assets/hookup_2_cropped.png">
-        <div class="btn-group-dropup">
+    <div class="emojis">
+        <img src="../assets/hookup.png">
+        <div class="btn-group dropup">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pick an emoji
+                Dropup
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">😍</a>
-                <a class="dropdown-item" href="#">😢</a>
-                <a class="dropdown-item" href="#">👻☠</a>
-                <a class="dropdown-item" href="#">🕵️‍♀️👩‍🎨👨‍🎤</a>
-                <a class="dropdown-item" href="#">🤠🧟💣</a>
-                <a class="dropdown-item" href="#">💑</a>
-                <a class="dropdown-item" href="#">🍆</a>
-                <a class="dropdown-item" href="#">🤡</a>
+            <div class="dropdown-menu">
+                <a class="heart-eyes" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown link
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">😍</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>
             </div>
-            <textarea id="text" name="text"></textarea>
-            <button type="submit" id="chill" class="send-message" aria-haspopup="true" aria-expanded="false">
-                Send
-            </button> 
         </div>
 
     </div>
 
     <div class="movies">
 
-    </div>
-
-    <div class="reviews">
-        <div class="submitted">
-            <h2>Movie Reviews</h2>
-        </div>
-        <form> 
-            <div>
-                <label for="name">Name:</label>
-                <br>
-                <input type="text" id="name" name="user_name">
-            </div>
-            <div>
-                <label for="review">Leave a review!</label>
-                <br>
-                <textarea id="review" name="review"></textarea>
-            </div>
-            <input type="submit" id='send-button' value='Submit'></input>
-        </form>
     </div>
     </main>
 
