@@ -15,9 +15,12 @@ header{
   text-decoration: none;
   width: 100%;
   font-family: Garamond;
-
-
 }
+
+header h1{
+  margin-right: 27vw;
+}
+
 main {
   display: flex;
   justify-content: space-around;
@@ -81,3 +84,15 @@ form {
   justify-content: space-between;
 }
 
+textarea[id="review"]{
+  background-color:#f9fafc;
+}
+
+input[type="submit"] {
+  background-color: gray;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1.5rem;
+}
