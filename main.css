@@ -23,6 +23,7 @@ header h1{
 
 h2 {
     color: #fff;
+    text-shadow: #333 .08vw .08vw .08vw;
 }
 
 main {
@@ -61,8 +62,11 @@ main {
   align-items: center;
   width: auto;
   color: #fff;
-  margin: 1vw;
+  margin: 0vw 1vw;
+}
 
+.card-text {
+    font-size: .75vw;
 }
 
 form {
@@ -72,6 +76,11 @@ form {
 #text {
   width: 140px;
   height: 45px;
+}
+
+#review {
+    width: 25vw;
+    height: 8vw;
 }
 
 .btn-group-dropup{
@@ -102,4 +111,28 @@ input[type="submit"] {
 
 label[for="review"]{
     color: #fff;
+}
+
+#about-us-title, #about-us-subtitle {
+    color: #fff;
+    text-shadow: #333 .08vw .08vw .08vw;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#about-us-p {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    color: #fff;  
+}
+
+#about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#giphy {
+    margin: 0vw 38vw;
 }
