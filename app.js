@@ -1,6 +1,6 @@
-const movieUrl = 'http://www.omdbapi.com/?t=Boogie Nights&apikey=39ddfcee'
+const movieUrl = 'http://www.omdbapi.com/'
 
-sadmovies = [
+sadMovies = [
     'Schindler’s List', 
     'Atonement', 
     'The Land Before Time ', 
@@ -53,7 +53,7 @@ actionMovies = [
     'Gladiator'
 ]
 
-chickflickMovies = [
+chickFlickMovies = [
     'Legally Blonde', 
     'Grease', 
     'Love and Honor', 
@@ -75,13 +75,23 @@ comedyMovies = [
     'Clerks', 
     'Amelie']
 
-getData(movieUrl)
-// .then(buildMovieCard)
+getData(buildMovieUrl(sadMovies))
+.then(buildMovieCard)
+
+function randomIndex(number) {
+    return Math.floor(Math.random() * number)
+}
+
+function buildMovieUrl(genre) {
+    const key = '39ddfcee'
+    let currentMovie = genre[randomIndex(genre.length)].replace(/[' ']/g, '+')
+    return movieUrl.concat(`?t=${currentMovie}&apikey=${key}`)
+}
 
 function getData(url) {
     return fetch(url)
     .then(response => response.json())
-    // .then(response => console.log(response.Title))
+    // .then(response => console.log(response))
 }
 
 function buildMovieCard(movie) {
