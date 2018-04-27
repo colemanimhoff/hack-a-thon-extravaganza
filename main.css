@@ -6,7 +6,7 @@ body html{
 header{
   padding: 0;
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: baseline;
   background-color: teal;
   text-decoration: none;
@@ -16,9 +16,21 @@ header{
 
 }
 
-.nav-item{
+.nav-link{
     color: black;
 }
+
+.emojis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.emojis img {
+  height: 550px;
+  width: 350px;
+}
+
 /*
 .nav ul li{
   display: inline-block;
