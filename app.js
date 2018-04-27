@@ -2,7 +2,7 @@ const movieUrl = 'http://www.omdbapi.com/'
 const emojis = document.querySelectorAll('.dropdown-item')
 const text = document.querySelector('#text')
 const chillButton = document.querySelector('#chill')
-let genre
+let searchParam
 
 let sadMovies = [
     'Schindler’s List', 
@@ -92,59 +92,48 @@ let scaryMovies = [
     'Veronica'
 ]
 
-getEmoji()
 chillButton.addEventListener('click', function(event) {
     parseEmoji(event)
-    // buildMovieUrl(genre)
-    // .then(getData(buildMovieUrl(genre)))
-    // .then(buildMovieCard)
+    buildMovieUrl(searchParam)
 })
 
 function randomIndex(number) {
     return Math.floor(Math.random() * number)
 }
 
-function buildMovieUrl(genre) {
-    console.log(genre)
-    const key = '39ddfcee'
-    let currentMovie = genre[randomIndex(genre.length)].replace(/[' ']/g, '+')
-    return movieUrl.concat(`?t=${currentMovie}&apikey=${key}`)
+function buildMovieUrl(searchParam) {
+    console.log(searchParam)
+    // const key = '39ddfcee'
+    // let currentMovie = searchParam[randomIndex(searchParam.length)].replace(/[' ']/g, '+')
+    // console.log(currentMovie)
+    // return movieUrl.concat(`?t=${currentMovie}&apikey=${key}`)
 }
 
 function getData(url) {
     return fetch(url)
     .then(response => response.json())
-    // .then(response => console.log(response))
 }
 
-function getEmoji() {
+function parseEmoji() {
     emojis.forEach(emoji => {
-        emoji.addEventListener('click', (event) => text.value = event.target.textContent)
+        emoji.addEventListener('click', function (event) { 
+            if (event.target.id === 'sad') {
+               searchParam = sadMovies
+            } else if (event.target.id === 'detective') {
+            searchParam = dramaMovies
+            } else if (event.target.id === 'laughing') {
+                searchParam = comedyMovies
+            } else if (event.target.id === 'bomb') {
+                searchParam = actionMovies
+            } else if (event.target.id === 'love') {
+                searchParam = romanticMovies
+            } else if (event.target.id === 'ghost') {
+                searchParam = scaryMovies
+            } else {
+                alert('Get a roooooooooom!')
+            }
+        })
     })
-}
-
-function parseEmoji(event) {
-    const dropDownMenu = document.querySelector('.dropdown-menu')
-    if (text.textContent === '😍') {
-        console.log(romanticMovies)
-        genre = romanticMovies
-    } else if (text.textContent === '😢') {
-        console.log(sadMovies)
-        genre = sadMovies
-    } else if (text.textContent === '👻☠') {
-        console.log(scaryMovies)
-        genre = scaryMovies
-    } else if (text.textContent === '🕵️‍♀️👩‍🎨👨‍🎤') {
-        console.log(romanticMovies)
-        genre = dramaMovies
-    } else if (text.textContent === '🤠🧟💣') {
-        console.log(actionMovies)
-        genre = actionMovies
-    } else if (text.textContent === '🤡') {
-        console.log(comedyMovies)
-        genre = comedyMovies
-    } 
-    return genre
 }
 
 function buildMovieCard(movie) {
