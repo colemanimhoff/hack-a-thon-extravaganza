@@ -134,7 +134,7 @@ function parseEmoji() {
             }
         })
     })
-}
+ }
 
 function buildMovieCard(movie) {
     const movieContainer = document.querySelector('.movies')
