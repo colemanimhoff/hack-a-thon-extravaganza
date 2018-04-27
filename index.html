@@ -36,7 +36,7 @@
                 <a class="dropdown-item" href="#">👌</a>
                 <a class="dropdown-item" href="#">🍆</a>
               </div>
-            <button type="submit" class="btn btn-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            <button type="submit" id="chill" class="send-message" aria-haspopup="true" aria-expanded="false">
                 Send
             </button> 
             </div>
@@ -46,6 +46,23 @@
 
     <div class="movies">
 
+    </div>
+
+    <div class="reviews">
+        <div class="submitted">
+            <h3></h3>
+        </div>
+        <form> 
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="review">Leave a review!</label>
+                <textarea id="review" name="review"></textarea>
+            </div>
+            <input type="submit" id='send-button' value='Send Message'></input>
+        </form>
     </div>
     </main>
 

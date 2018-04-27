@@ -29,12 +29,23 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 33vw;
 }
 
 .emojis img {
   height: 550px;
   width: 350px;
 }
+
+.movies{
+  width: 33vw;
+}
+
+.reviews{
+  width: 33vw;
+}
+
+
 
 /*
 .nav ul li{
