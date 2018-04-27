@@ -18,20 +18,20 @@ header{
 main {
   display: flex;
   justify-content: space-around;
-  margin: 4vw;
+  margin: 4vw 11vw;
 }
 
 .nav-link{
     color: black;
 }
 
-.emojis {
+.text-message {
   display: flex;
   flex-direction: column;
   width: 33vw;
 }
 
-.emojis img {
+.text-message img {
   height: 550px;
   width: 350px;
 }
@@ -47,6 +47,28 @@ main {
 .submitted{
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+form {
+  width: auto;
+}
+
+#text {
+  width: 45px;
+  height: 45px;
+}
+
+.btn-group-dropup{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1vw;
+  padding-right: 1vw;
+}
 
 /*
 .nav ul li{
