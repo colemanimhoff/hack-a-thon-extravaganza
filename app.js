@@ -109,7 +109,6 @@ function buildMovieUrl(event, searchParam) {
 
 function getData(event, url) {
     return fetch(url)
-<<<<<<< HEAD
     .then(response => response.json())
 }
 
@@ -134,11 +133,6 @@ function parseEmoji() {
         })
     })
  }
-=======
-        .then(response => response.json())
-        .then(response => console.log(response))
-}
->>>>>>> 86b3d53ec51194af0fbaab7421840f5079fee648
 
 function buildMovieCard(movie) {
     const movieContainer = document.querySelector('.movies')
