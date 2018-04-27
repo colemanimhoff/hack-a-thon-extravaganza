@@ -1,6 +1,10 @@
 const movieUrl = 'http://www.omdbapi.com/'
+const emojis = document.querySelectorAll('.dropdown-item')
+const text = document.querySelector('#text')
+const chillButton = document.querySelector('#chill')
+let genre
 
-sadMovies = [
+let sadMovies = [
     'Schindler’s List', 
     'Atonement', 
     'The Land Before Time ', 
@@ -13,7 +17,7 @@ sadMovies = [
     'Extremis'
 ]
 
-dramaMovies = [
+let dramaMovies = [
     'The Loft', 
     'J. Edgar ', 
     'The Negotiator', 
@@ -26,7 +30,7 @@ dramaMovies = [
     'The Revenant'
 ]
 
-romanticMovies = [
+let romanticMovies = [
     'Adventureland', 
     'The Social Network', 
     'Eternal Sunshine of the Spotless Mind', 
@@ -39,7 +43,7 @@ romanticMovies = [
     'The Wedding Singer'
 ]
 
-actionMovies = [
+let actionMovies = [
     'The Avengers', 
     'Mission Impossible 2', 
     'Mission Impossible: Ghost Protocol', 
@@ -53,7 +57,7 @@ actionMovies = [
     'Gladiator'
 ]
 
-chickFlickMovies = [
+let chickFlickMovies = [
     'Legally Blonde', 
     'Grease', 
     'Love and Honor', 
@@ -65,7 +69,7 @@ chickFlickMovies = [
     'Can\'t Buy Me Love', 
     'She\'s All That']
 
-comedyMovies = [
+let comedyMovies = [
     'Tommy Boy', 
     'Planes, Trains and Automobiles', 
     'The Trip', 'The Breakfast Club', 
@@ -75,14 +79,33 @@ comedyMovies = [
     'Clerks', 
     'Amelie']
 
-getData(buildMovieUrl(sadMovies))
-.then(buildMovieCard)
+let scaryMovies = [
+    'The Babadook', 
+    'Hellraiser', 
+    'The Nightmare', 
+    'It Follows', 
+    'The Descent', 
+    'The Wailing', 
+    'Gerald’s Game', 
+    'The Sixth Sense', 
+    'Cube', 
+    'Veronica'
+]
+
+getEmoji()
+chillButton.addEventListener('click', function(event) {
+    parseEmoji(event)
+    // buildMovieUrl(genre)
+    // .then(getData(buildMovieUrl(genre)))
+    // .then(buildMovieCard)
+})
 
 function randomIndex(number) {
     return Math.floor(Math.random() * number)
 }
 
 function buildMovieUrl(genre) {
+    console.log(genre)
     const key = '39ddfcee'
     let currentMovie = genre[randomIndex(genre.length)].replace(/[' ']/g, '+')
     return movieUrl.concat(`?t=${currentMovie}&apikey=${key}`)
@@ -94,11 +117,42 @@ function getData(url) {
     // .then(response => console.log(response))
 }
 
+function getEmoji() {
+    emojis.forEach(emoji => {
+        emoji.addEventListener('click', (event) => text.value = event.target.textContent)
+    })
+}
+
+function parseEmoji(event) {
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+    if (text.textContent === '😍') {
+        console.log(romanticMovies)
+        genre = romanticMovies
+    } else if (text.textContent === '😢') {
+        console.log(sadMovies)
+        genre = sadMovies
+    } else if (text.textContent === '👻☠') {
+        console.log(scaryMovies)
+        genre = scaryMovies
+    } else if (text.textContent === '🕵️‍♀️👩‍🎨👨‍🎤') {
+        console.log(romanticMovies)
+        genre = dramaMovies
+    } else if (text.textContent === '🤠🧟💣') {
+        console.log(actionMovies)
+        genre = actionMovies
+    } else if (text.textContent === '🤡') {
+        console.log(comedyMovies)
+        genre = comedyMovies
+    } 
+    return genre
+}
+
 function buildMovieCard(movie) {
     const movieContainer = document.querySelector('.movies')
     const movieCardContainer = createElement('div')
     addClass(movieCardContainer, 'card')
-    addAttr(movieCardContainer, 'style', 'width: 20vw;')
+    addAttr(movieCardContainer, 'style', 'width: 33vw;')
+    addAttr(movieCardContainer, 'style', 'height: 15vh;')
     appendElement(movieContainer, movieCardContainer)
     const moviePoster = createElement('img')
     addAttr(moviePoster, 'src', movie.Poster)
@@ -121,7 +175,7 @@ function buildMovieCard(movie) {
     const movieButton = createElement('a')
     addClass(movieButton, 'btn')
     addClass(movieButton, 'btn-primary')
-    addText(movieButton, 'Get More Info')
+    addText(movieButton, 'Review')
     appendElement(cardBody, movieButton)
 }
 
